@@ -1,12 +1,10 @@
 "use strict";
-var re_image_url = new RegExp(".*://.*/.*\.(jpg|jpeg|png|gif)");
-var all = /.*/;
 
-function blockImages(e) {
+function blockRequest(e) {
     return {cancel: true};
 }
 
-chrome.webRequest.onBeforeSendHeaders.addListener(blockImages,
-        {urls: ["<all_urls>"]},
+chrome.webRequest.onBeforeRequest.addListener(blockRequest,
+        {urls: ["<all_urls>"], types: ["image"]},
         ["blocking"]);
 
