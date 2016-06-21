@@ -16,12 +16,20 @@
     },
 
     "background": {
-        "scripts": ["noimage.js"]
+        "scripts": ["background-noimage.js"]
     },
 
     "permissions": [
         "<all_urls>",
         "webRequest",
         "webRequestBlocking"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content-noimage.js"],
+            "css": ["noimage.css"]
+        }
     ]
 }
