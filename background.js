@@ -3,7 +3,11 @@
 var blocking = true;
 
 function blockRequest(req) {
-    return { cancel: true };
+    if (blocking) {
+        return { cancel: true };
+    } else {
+        return {};
+    }
 }
 
 function toggleBlocking() {

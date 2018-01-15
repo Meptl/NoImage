@@ -16,7 +16,14 @@
     },
 
     "background": {
-        "scripts": ["background-noimage.js"]
+        "scripts": ["background.js"]
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "16": "images/border-48.png",
+            "32": "images/border-48.png"
+        }
     },
 
     "permissions": [
@@ -28,8 +35,12 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["content-noimage.js"],
+            "js": ["content.js"],
             "css": ["noimage.css"]
         }
+    ],
+
+    "web_accessible_resources": [
+        "images/no.png"
     ]
 }
